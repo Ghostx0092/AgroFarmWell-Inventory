@@ -22,7 +22,7 @@ function App() {
   const handleAddToCart = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://agro-farm-well-inventory.vercel.app/addtocart', {
+      const res = await axios.post('https://agro-farm-well-inventory-c6u1.vercel.app/addtocart', {
         email,
         cropName,
         amount
@@ -36,7 +36,7 @@ function App() {
   const handleDeleteCrop = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.delete(`https://agro-farm-well-inventory.vercel.app/deletecrop/${email}/${cropName}`);
+      const res = await axios.delete(`https://agro-farm-well-inventory-c6u1.vercel.app/deletecrop/${email}/${cropName}`);
       setMessage(res.data.message);
     } catch (error) {
       setMessage(error.response.data.message);
@@ -46,7 +46,7 @@ function App() {
   const handleGetCart = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.get(`https://agro-farm-well-inventory.vercel.app/cart/${email}`);
+      const res = await axios.get(`https://agro-farm-well-inventory-c6u1.vercel.app/cart/${email}`);
       setCart(res.data.cart);
     } catch (error) {
       setMessage(error.response.data.message);
@@ -56,7 +56,7 @@ function App() {
   const handleUpdateCrop = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(`https://agro-farm-well-inventory.vercel.app/updatecrop/${email}/${cropName}`, {
+      const res = await axios.put(`https://agro-farm-well-inventory-c6u1.vercel.app/updatecrop/${email}/${cropName}`, {
         newCropName,
         amount
       });
